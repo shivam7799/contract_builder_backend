@@ -1,0 +1,27 @@
+scalar Date
+
+type Query {
+  states: [State]
+  stateById(id: ID!): State
+}
+
+type State {
+  id: ID!
+  name: String
+  country_id: Int
+  created_by: Int
+  updated_by: Int
+  created_at: Date
+  updated_at: Date
+  country: Country
+}
+
+type Country {
+  id: ID!
+  country_name: String
+  created_by: Int
+  updated_by: Int
+  created_at: Date
+  updated_at: Date
+  states: [State]
+}
